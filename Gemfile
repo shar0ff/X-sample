@@ -64,4 +64,11 @@ group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
   gem "capybara"
   gem "selenium-webdriver"
+
+  # Create customizable MiniTest output formats.
+  gem "minitest-reporters"
+
+  # MiniBacktrace allows you to take advantage of the Rails.backtrace_cleaner when using MiniTest.
+  gem "mini_backtrace"
+
 end
