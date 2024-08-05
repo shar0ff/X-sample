@@ -71,4 +71,7 @@ group :test do
   # MiniBacktrace allows you to take advantage of the Rails.backtrace_cleaner when using MiniTest.
   gem "mini_backtrace"
 
+  # Provide assert_template method
+  gem 'rails-controller-testing'
+
 end
