@@ -1,0 +1,25 @@
+<div class="content">
+  <div class="form-container">
+    <div class="center jumbotron">
+      <h1>Log in</h1>
+      <%= form_for(:session, url: login_path, data: { turbo: false }) do |f| %>
+        <div class="mb-3">
+          <%= f.label :email, "Your Email" %>
+          <%= f.email_field :email, class: "form-control" %>
+        </div>
+        <div class="mb-3">
+          <%= f.label :password %>
+          <%= f.password_field :password, class: "form-control" %>
+        </div>
+        <div class="form-check">
+          <%= f.check_box :remember_me, class: "form-check-input" %>
+          <%= f.label :remember_me, "Remember me", class: "form-check-label" %>
+        </div>
+        <div class="mb-3">
+          <%= f.submit "Log in", class: "btn btn-success btn-block btn-lg gradient-custom-4 text-body" %>
+        </div>
+      <% end %>
+      <p>New user? <%= link_to "Sign up now!", signup_path %></p>
+    </div>
+  </div>
+</div>
