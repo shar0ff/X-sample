@@ -24,6 +24,11 @@ module SessionsHelper
     end
   end
 
+  # Returns true if the specified user is the current user.
+  def current_user?(user)
+    user == current_user
+  end
+
   # Returns true if the user is logged in, otherwise false.
   def logged_in?
     !current_user.nil?
@@ -41,5 +46,16 @@ module SessionsHelper
     forget(current_user)
     session.delete(:user_id)
     @current_user = nil
+  end
+
+  # Redirects to the saved location (or default).
+  def redirect_back_or(default)
+    redirect_to(session[:forwarding_url] || default)
+    session.delete(:forwarding_url)
+  end
+
+  # Saves the requested URL.
+  def store_location
+    session[:forwarding_url] = request.url if request.get?
   end
 end
