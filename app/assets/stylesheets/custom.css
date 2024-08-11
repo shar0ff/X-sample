@@ -20,7 +20,7 @@ body {
 }
 
 .center h1 {
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 }
 
 section {
@@ -32,25 +32,15 @@ textarea {
 }
 
 .gradient-custom-3 {
-    /* fallback for old browsers */
     background: #84fab0;
-
-    /* Chrome 10-25, Safari 5.1-6 */
     background: -webkit-linear-gradient(to right, rgba(132, 250, 176, 0.5), rgba(143, 211, 244, 0.5));
-
-    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    background: linear-gradient(to right, rgba(132, 250, 176, 0.5), rgba(143, 211, 244, 0.5))
+    background: linear-gradient(to right, rgba(132, 250, 176, 0.5), rgba(143, 211, 244, 0.5));
 }
 
 .gradient-custom-4 {
-    /* fallback for old browsers */
     background: #84fab0;
-
-    /* Chrome 10-25, Safari 5.1-6 */
     background: -webkit-linear-gradient(to right, rgba(132, 250, 176, 1), rgba(143, 211, 244, 1));
-
-    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    background: linear-gradient(to right, rgba(132, 250, 176, 1), rgba(143, 211, 244, 1))
+    background: linear-gradient(to right, rgba(132, 250, 176, 1), rgba(143, 211, 244, 1));
 }
 
 .form-container {
@@ -84,4 +74,41 @@ textarea {
 
 .btn-block {
     width: 100%;
+}
+
+.users {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    max-width: 600px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.user-item {
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+    border-bottom: 1px solid #ddd;
+}
+
+.user-item:last-child {
+    border-bottom: none;
+}
+
+.gravatar-image {
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+.user-link {
+    font-size: 18px;
+    color: #007bff;
+    text-decoration: none;
+}
+
+.user-link:hover {
+    text-decoration: underline;
 }
