@@ -9,5 +9,10 @@
         <%= link_to user.name, user, class: 'user-link' %>
       </li>
     <% end %>
+    <div class="content">
+      <div class="center jumbotron">
+        <%= paginate @users%>
+      </div>
+      </div>
   </ul>
 </div>
