@@ -1,0 +1,18 @@
+<% provide(:title, "Forgot password") %>
+
+<div class="content">
+  <div class="form-container">
+    <div class="center jumbotron">
+      <h1>FORGOT PASSWORD</h1>
+      <%= form_for(:password_reset, url: password_resets_url, data: { turbo: false }) do |f| %>
+        <div class="mb-3">
+          <%= f.label :email %>
+          <%= f.email_field :email, class: 'form-control' %>
+        </div>
+        <div class="mb-3">
+          <%= f.submit "Submit", class: "btn btn-success btn-block btn-lg gradient-custom-4 text-body" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
