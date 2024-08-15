@@ -21,5 +21,10 @@ test:
   database: storage/test.sqlite3
 
 production:
-  <<: *default
-  database: storage/production.sqlite3
+  adapter: postgresql
+  encoding: unicode
+  database: d7e7esie925osr
+  host: cah8ha8ra8h8i7.cluster-czz5s0kz4scl.eu-west-1.rds.amazonaws.com
+  pool: 5
+  username: u2r0a48h2rsj3f
+  password: <%= ENV['DATABASE_PASSWORD'] %>
