@@ -6,6 +6,7 @@ class User < ApplicationRecord
   before_save :downcase_email
   before_create :create_activation_digest
 
+  has_many :microposts, dependent: :destroy
   has_secure_password
   paginates_per 20
 

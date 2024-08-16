@@ -27,3 +27,9 @@ User.create!(name:  "Ivan Sharov",
                activated: true,
                activated_at: Time.zone.now)
 end
+
+users = User.order(:created_at).take(6)
+25.times do
+  content = Faker::Lorem.sentence(word_count: 3)
+  users.each { |user| user.microposts.create!(content: content) }
+end
