@@ -7,15 +7,24 @@ class MicropostsControllerTest < ActionDispatch::IntegrationTest
 
   test "should redirect create when not logged in" do
     assert_no_difference "Micropost.count" do
-      post :create, params: { micropost: { content: "Lorem ipsum" } }
+      post microposts_path, params: { micropost: { content: "Lorem ipsum" } }
     end
     assert_redirected_to login_url
   end
 
   test "should redirect destroy when not logged in" do
     assert_no_difference "Micropost.count" do
-      delete :destroy, params: { id: @micropost.id }
+      delete micropost_path(@micropost)
     end
     assert_redirected_to login_url
+  end
+
+  test "should redirect destroy when logged in as wrong user" do
+    log_in_as(users(:ivan))
+    micropost = microposts(:orange)
+    assert_no_difference "Micropost.count" do
+      delete micropost_path(micropost)
+    end
+    assert_redirected_to root_url
   end
 end

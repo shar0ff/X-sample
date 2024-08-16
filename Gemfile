@@ -48,7 +48,14 @@ gem 'faker'
 # A Scope & Engine based, clean, powerful, customizable and sophisticated paginator for Ruby webapps
 gem 'kaminari'
 
+# A Ruby gem to load environment variables from `.env`.
 gem 'dotenv-rails'
+
+# Process an uploaded image for Micropost model.
+# Gems mini_magick and fog needed to resize images.
+gem 'carrierwave', '~> 2.2'
+gem 'mini_magick', '~> 4.11'
+# gem 'fog'
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
