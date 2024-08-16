@@ -8,9 +8,9 @@
         <%= gravatar_for user, size: 50, class: 'gravatar-image' %>
         <%= link_to user.name, user, class: 'user-link' %>
         <% if current_user.admin? && !current_user?(user) %>
-          | <%= link_to "delete", user, method: :delete,
-                        data: { confirm: "You sure?" } %>
-        <% end %>
+          | <%= link_to "delete", user,
+                        data: { turbo_method: :delete, confirm: "You sure?" }%>
+      <% end %>
       </li>
     <% end %>
     <div class="content">
