@@ -23,5 +23,8 @@ module XSmaple
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
+
+    # Add an authentication token to the remote form.
+    config.action_view.embed_authenticity_token_in_remote_forms = true
   end
 end

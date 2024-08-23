@@ -8,6 +8,8 @@
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
 
+
+# Users
 User.create!(name:  "Ivan Sharov",
              email: "sharovivan17@gmail.com",
              password:              "password",
@@ -28,8 +30,19 @@ User.create!(name:  "Ivan Sharov",
                activated_at: Time.zone.now)
 end
 
+
+# Microposts
 users = User.order(:created_at).take(6)
 25.times do
   content = Faker::Lorem.sentence(word_count: 3)
   users.each { |user| user.microposts.create!(content: content) }
 end
+
+
+# Relationships
+users = User.all
+user  = users.first
+following = users[2..50]
+followers = users[3..40]
+following.each { |followed| user.follow(followed) }
+followers.each { |follower| follower.follow(user) }

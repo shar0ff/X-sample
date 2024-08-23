@@ -1,0 +1,15 @@
+one:
+  follower: ivan
+  followed: volodymyr
+
+two:
+  follower: ivan
+  followed: maxim
+
+three:
+  follower: volodymyr
+  followed: ivan
+
+four:
+  follower: maxim
+  followed: borys
