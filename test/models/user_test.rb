@@ -77,4 +77,22 @@ class UserTest < ActiveSupport::TestCase
     ivan.unfollow(borys)
     assert_not ivan.following?(borys)
   end
+
+  test "feed should have the right posts" do
+    ivan = users(:ivan)
+    borys  = users(:borys)
+    maxim   = users(:maxim)
+    # Following user's messages.
+    maxim.microposts.each do |post_following|
+      assert ivan.feed.include?(post_following)
+    end
+    # Own messages.
+    ivan.microposts.each do |post_self|
+      assert ivan.feed.include?(post_self)
+    end
+    # Other user's messages.
+    borys.microposts.each do |post_unfollowed|
+      assert_not ivan.feed.include?(post_unfollowed)
+    end
+  end
 end
